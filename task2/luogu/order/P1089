@@ -1,0 +1,33 @@
+package SaveMoney;
+import java.util.*;
+
+public class SaveMoney {
+    public static void main(String[] args){
+        Scanner reader = new Scanner(System.in);
+        int[] a = new int[12];
+        int sum = 0;
+        for(int i = 0; i < 12; i++){
+            a[i] = reader.nextInt();
+        }
+        int m = 0;
+        for(int i = 0; i < 12; i++){
+            int n, x = 0;
+            sum += 300;
+            if(sum >= a[i]){
+                n = (sum - a[i])/100;
+                x = n * 100;
+                sum = sum - a[i] - x;
+                m += x;
+            }else{
+                sum = 0;
+                System.out.println(-(i+1));
+                break;
+            }
+            while(i == 11){
+                m = (m * 12)/10 + sum;
+                System.out.print(m);
+                break;
+            }
+        }
+    }
+}
