@@ -1,0 +1,19 @@
+package battery;
+import java.util.*;
+
+public class Battery {
+    public static void main(String[] args){
+        Scanner reader = new Scanner(System.in);
+        int n = reader.nextInt();
+        double m = 0.0;
+        if(n >= 0 && n <= 150){
+            m = n * 0.4463;
+        }else if(n > 150 && n <= 400){
+            m = 150 * 0.4463 + (n - 150) * 0.4663;
+        }else{
+            m = 150 * 0.4463 + 250 * 0.4663 + (n - 400) * 0.5663;
+        }
+        m = (double) Math.round(m * 10) / 10;
+        System.out.println(m);
+    }
+}
