@@ -1,0 +1,28 @@
+小鱼航程
+package FishSwim;
+import java.util.*;
+
+public class FishSwim {
+    public static void main(String[] args){
+        Scanner reader = new Scanner(System.in);
+        int x = reader.nextInt();
+        int n = reader.nextInt();
+        int a, b, c, sum;
+        a = n/7;
+        sum = a * 250 * 5;
+        b = n % 7;
+        c = x - 1 + b;
+        if(c < 5){
+            sum = sum + b * (150 + 100);
+        }else if(c >= 5 && c <= 7 && x <= 5){
+            sum = sum + (5 - x + 1) * 250;
+        }else if(x > 5 && c > 7){
+            sum = sum + (c - 7) * 250;
+        }else if(x <= 5 && c > 7){
+            sum = sum + (b - 2) * 250;
+        }else{
+
+        }
+        System.out.print(sum);
+    }
+}
