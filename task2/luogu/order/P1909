@@ -1,0 +1,36 @@
+买铅笔
+package Pencil;
+import java.util.*;
+
+public class PayPencil {
+    public static void main(String[] args){
+        Scanner reader = new Scanner(System.in);
+        int m, n, pay = 0;
+        int[] a = new int[3];
+        int[] b = new int[3];
+        int[] c = new int[3];
+        n = reader.nextInt();
+        for(int i = 0; i < 3; i++){
+            a[i] = reader.nextInt();
+            b[i] = reader.nextInt();
+        }
+        for(int i = 0; i < 3; i++){
+            if(n % a[i] != 0){
+                m = n/a[i] + 1;
+            }
+            else{
+                m = n/a[i];
+            }
+            c[i] = m * b[i];
+            if(i == 0){
+                pay = c[i];
+            }
+            else{
+                if(c[i] <= pay){
+                    pay = c[i];
+                }
+            }
+        }
+        System.out.print(pay);
+    }
+}
