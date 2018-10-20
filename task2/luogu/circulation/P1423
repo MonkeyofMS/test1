@@ -1,0 +1,18 @@
+游泳
+package Swim;
+import java.util.*;
+
+public class Swim {
+    public static void main(String[] args){
+        Scanner reader = new Scanner(System.in);
+        double x = reader.nextDouble();
+        int n = 0;
+        double sum = 0.0, m = 2.0;
+        while(sum < x){
+            n++;
+            sum += m;
+            m = m * 0.98;
+        }
+        System.out.print(n);
+    }
+}
