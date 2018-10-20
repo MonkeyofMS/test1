@@ -1,0 +1,17 @@
+级数求和
+package Add;
+import java.util.*;
+
+public class Add {
+    public static void main(String[] args){
+        Scanner reader = new Scanner(System.in);
+        int K = reader.nextInt();
+        int N = 0;
+        double sum = 0.0;
+        while(sum <= K){
+            N++;
+            sum += (double)1/N;
+        }
+        System.out.print(N);
+    }
+}
